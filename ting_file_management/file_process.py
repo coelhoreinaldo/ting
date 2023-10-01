@@ -23,27 +23,20 @@ def process(path_file, instance: Queue):
     print(processed)
 
 
-def remove(instance):
-    """Aqui irá sua implementação"""
+def remove(instance: Queue):
+    if instance.is_empty():
+        return print("Não há elementos")
+
+    removed_process = instance.dequeue()
+    process_name = removed_process["nome_do_arquivo"]
+    return print(f"Arquivo {process_name} removido com sucesso")
 
 
 def file_metadata(instance, position):
     """Aqui irá sua implementação"""
 
 
-instance = Queue()
-
-
 # if __name__ == "__main__":
-#     print(
-#         process(
-#             "../statics/arquivo_teste.txt",
-#             instance,
-#         )
-#     )
-#     print(
-#         process(
-#             "../statics/arquivo_teste.txt",
-#             instance,
-#         )
-#     )
+#     instance = Queue()
+#     process("../statics/arquivo_teste.txt", instance)
+#     remove(instance)
