@@ -1,10 +1,6 @@
 from ting_file_management.abstract_queue import AbstractQueue
 
 
-class InvalidIndexError(Exception):
-    ...
-
-
 class Queue(AbstractQueue):
     def __init__(self):
         self._data = list()
