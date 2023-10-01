@@ -24,3 +24,9 @@ class Queue(AbstractQueue):
 
     def is_empty(self):
         return not len(self._data)
+
+    def get_element_at(self, index):
+        if index > len(self._data) - 1:
+            return None
+
+        return self._data[index]
