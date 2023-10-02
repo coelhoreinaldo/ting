@@ -25,7 +25,25 @@ def exists_word(word, instance: Queue):
 
 
 def search_by_word(word, instance: Queue):
-    """Aqui irá sua implementação"""
+    found_word_process = []
+    word = word.lower()
+    for data in instance._data:
+        has_word = False
+        file_lines = data["linhas_do_arquivo"]
+        formatted_dict = {
+            "palavra": word,
+            "arquivo": data["nome_do_arquivo"],
+            "ocorrencias": [],
+        }
+        for index, line in enumerate(file_lines):
+            line_lower = line.lower()
+            if word in line_lower:
+                ocorrencia = {"linha": index + 1, "conteudo": line}
+                formatted_dict["ocorrencias"].append(ocorrencia)
+                has_word = True
+        if has_word:
+            found_word_process.append(formatted_dict)
+    return found_word_process
 
 
 queue = Queue()
