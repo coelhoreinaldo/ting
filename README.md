@@ -11,6 +11,8 @@ Um programa que simula um sistema de indexação de documentos, permitindo anexa
 - Python
 - Pytest
 - Algoritmos de busca e ordenação
+- Pilhas e Filas
+- P.O.O
 
 ## 🛠️ Como executar o projeto?
 
